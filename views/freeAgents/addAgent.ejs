@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a new FreeAgent</title>
+</head>
+<body>
+    <%- include('../partials/navbar')  %> 
+  
+
+
+
+
+<div class="row">
+    <h1 class="text-center">New Player:</h1>
+    <div class="col-6 offset-3">
+        <form action="/freeAgentPool/add" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name">
+            </div>
+         
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="image">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="age">Age</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label"></span>
+                    <input type="text" class="form-control" id="Age" placeholder="0.00" aria-label="Age"
+                        aria-describedby="price-label" name="age">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="position">Position</label>
+                <input class="form-control" type="text" id="position" name="position">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="height">Height</label>
+                <input class="form-control" type="text" id="height" name="height">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="description"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Player</button>
+            </div>
+        </form>
+        <a href="#">All Players</a>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -11,6 +11,52 @@
 <h1>Free Agent Pool</h1>
 
 <%- include('../partials/navbar')  %> 
+<section class="listOfAllAgents">
+<h1>List of Players:</h1>
+
+
+<% listOfAllAgents.forEach(element => { %>
+
+<!-- <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="<%= element.image  %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">  <%= element.name  %> </h5>
+          <p class="card-text">
+            <%= element.age %>
+            <%= element.height%>
+            <%= element.position %>
+            <%= element.description %> </p>
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= element.image  %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= element.name  %> </h5>
+          <p class="card-text"><%= element.description %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">    <%= element.age %></li>
+          <li class="list-group-item">  <%= element.height%></li>
+          <li class="list-group-item">      <%= element.position %></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Show</a>
+          <a href="#" class="card-link">Add</a>
+          <a href="#" class="card-link">Delete Player</a>
+        </div>
+      </div>
+
+      <br>
+
+
+    </section>
     
+ 
+  <% }) %>
 </body>
 </html>
