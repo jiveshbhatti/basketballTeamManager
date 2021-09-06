@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const validator = require('validator')
 const Schema = mongoose.Schema;
 
 
@@ -15,7 +15,10 @@ mongoose.connect('mongodb://localhost:27017/freeAgent', { useNewUrlParser: true,
 
 const freeAgentSchema = new Schema({
 
-    name: String,
+    name: {
+       type:String,
+        required: true},
+        //validate: name.validator},
     image: String,
     age: Number,
     description: String,
