@@ -16,7 +16,7 @@
 
 <div class="row row-cols-1 row-cols-md-2 g-4">
 
- 
+ <!-- !manually added team's code. -->
 <% team.forEach(element => { %>
 
 
@@ -24,7 +24,7 @@
     <div class="col">
 
     <div class="card" style="width: 18rem;">
-        <img src="<%= team.image  %> " class="card-img-top" alt="...">
+        <!-- <img src="<%= team.image  %> " class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h5 class="card-title"><%= element.name  %> </h5>
           <p class="card-text"><%= team.description %> </p>
@@ -33,6 +33,41 @@
           <li class="list-group-item">    <%= team.age %></li>
           <li class="list-group-item">  <%= team.height%></li>
           <li class="list-group-item">      <%= team.position %></li>
+        </ul>
+        <div class="card-body">
+          
+          
+     
+          <a href="freeAgentPool/show/<%= team.id  %>"><button type="button" class="btn btn-info">Show</button></a>
+         
+          <a href="freeAgentPool/delete/<%= team.id  %>"> <button type="button" class="btn btn-danger">Delete</button></a>
+        </div>
+      </div>
+
+      <br>
+
+
+    </div>
+    
+ 
+  <% }) %> 
+
+
+<!-- !Code for second loop for user model teams added. -->
+  <% newTeamsAdded.forEach(element => { %>
+
+
+
+    <div class="col">
+
+    <div class="card" style="width: 18rem;">
+        
+        <div class="card-body">
+          <h5 class="card-title"><%= element.name  %> </h5>
+       
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">    <%= team.players %></li>
         </ul>
         <div class="card-body">
           

@@ -2,7 +2,8 @@ const teamRoute = require('../routes/teams')
 const axios = require('axios')
 const teamModel = require('../models/freeAgent')
 const mongoose = require('mongoose')
-
+const userModel = require('../models/userModel')
+const freeAgentModel = require('../models/freeAgent')
 
 
 
@@ -13,31 +14,45 @@ const teams = async (req,res,next)=>{
 
     const team = await teamModel.Team.find({})
    
+
+    //!second teams database code
+
+    const newTeamsAdded = await userModel.TeamSignUpInst.find({})
     
-    console.log(team)
+ 
 
 
    
-     res.render('teams/teamsIndex', {team})
+     res.render('teams/teamsIndex', {team, newTeamsAdded})
     //return team
 
 }
 
 
 const addPlayer = async (req,res,next)=> {
+    console.log('addplayer function')
+    //const team= req.params.id
+    const player = req.params.id
 
-    const team= req.params.id
-    const player = req.params.playerid
+    console.log(player)
+    
 
-    const freeAgent = await freeAgentModel.FreeAgent.findById(team)
-
+    const freeAgent = await freeAgentModel.FreeAgent.findById(player)
+    console.log(freeAgent)
     //team.player.push({})
 
+}
+
+const signup = async(req,res,next)=>{
+
+
+    res.render('teams/addTeam',{})
 }
 
 
 module.exports = {
 
     addPlayer,
-    teams
+    teams,
+    signup
 }

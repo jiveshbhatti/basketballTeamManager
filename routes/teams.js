@@ -8,7 +8,8 @@ const authController = require('../controllers/authController')
 router.get('/', teamsController.teams);
 
 //&login for teams and signup below
-
+router.get('/signup', teamsController.signup)
 router.post('/signup', authController.signup)
+router.get('/add/:id', teamsController.addPlayer)
 
 module.exports = router

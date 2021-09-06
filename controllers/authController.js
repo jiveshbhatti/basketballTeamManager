@@ -13,12 +13,17 @@ const newTeam = await new teamModel.TeamSignUpInst(req.body)
 await newTeam.save()
 
 
-res.status(201).json({
 
-    status:'success',
-    data:{
+// res.status(201).json({
 
-        team :newTeam
-    }
-})
+//     status:'success',
+//     data:{
+
+//         team :newTeam
+//     }
+// })
+
+
+res.redirect('/Teams')
+
 }
