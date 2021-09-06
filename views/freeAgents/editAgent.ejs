@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navbar')  %> 
+
+    <div class="row">
+        <h1 class="text-center">Edit Agent</h1>
+        <div class="col-6 offset-3">
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="title" name="name"
+                        value="<%=freeAgent.name %>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="age">age</label>
+                    <input class="form-control" type="text" id="location" name="age"
+                        value="<%=freeAgent.age %>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image Url</label>
+                    <input class="form-control" type="text" id="image" name="image"
+                        value="<%=freeAgent.image %>">
+                </div>
+           
+    
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description"
+                        name="description"><%= freeAgent.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info">Update Player</button>
+                </div>
+            </form>
+           
+    
+        </div>
+    </div>
+</body>
+</html>

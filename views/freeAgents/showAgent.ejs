@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Agent</title>
+</head>
+<body>
+
+<%- include('../partials/navbar')  %> 
+
+    
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= freeAgent.image%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= freeAgent.name%></h5>
+                <p class="card-text"><%= freeAgent.description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted"><%= freeAgent.position %></li>
+                <li class="list-group-item"><%= freeAgent.age %></li>
+                <li class="list-group-item"><%= freeAgent.height %></li>
+              
+            </ul>
+            <div class="card-body">
+ 
+
+                <a href="#"><button type="button" class="btn btn-info">Info</button></a>
+                <a href="#"> <button type="button" class="btn btn-danger">Delete</button></a>
+                <a href="/freeAgentPool/edit/<%= freeAgent.id  %>"><button type="button" class="btn btn-warning">Edit</button></a>
+
+                
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
