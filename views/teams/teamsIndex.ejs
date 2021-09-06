@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Agent Pool</title>
+</head>
+<body>
+
+<h1>Free Agent Pool</h1>
+
+<%- include('../partials/navbar')  %> 
+
+<h1>List of Teams:</h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+ 
+<% team.forEach(element => { %>
+
+
+
+    <div class="col">
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= team.image  %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= element.name  %> </h5>
+          <p class="card-text"><%= team.description %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">    <%= team.age %></li>
+          <li class="list-group-item">  <%= team.height%></li>
+          <li class="list-group-item">      <%= team.position %></li>
+        </ul>
+        <div class="card-body">
+          
+          
+     
+          <a href="freeAgentPool/show/<%= team.id  %>"><button type="button" class="btn btn-info">Show</button></a>
+          <button type="button" class="btn btn-success">Add</button>
+          <a href="freeAgentPool/delete/<%= team.id  %>"> <button type="button" class="btn btn-danger">Delete</button></a>
+        </div>
+      </div>
+
+      <br>
+
+
+    </div>
+    
+ 
+  <% }) %> 
+
+</div>
+</body>
+</html>
