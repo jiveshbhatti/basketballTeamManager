@@ -41,6 +41,8 @@ console.log(currentPass)
 
 if((email&&password) === (currentEmail && currentPass)){
 console.log('login success')
+
+res.redirect('/')
 }
 else{
     console.log('wrong pass')
