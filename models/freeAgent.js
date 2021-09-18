@@ -3,8 +3,7 @@ const validator = require('validator')
 const Schema = mongoose.Schema;
 
 
-mongoose.connect('mongodb+srv://jiveshbhatti:Sajan1991@cluster0.0tpoi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/freeAgent', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("CONNECTION OPEN!!! free-Agents")
     })
@@ -12,6 +11,33 @@ mongoose.connect('mongodb+srv://jiveshbhatti:Sajan1991@cluster0.0tpoi.mongodb.ne
         console.log("OH NO ERROR!!!!")
         console.log(err)
     })
+
+    /**Online Database */
+    // mongoose.connect('mongodb+srv://jiveshbhatti:Sajan1991@cluster0.0tpoi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+    // .then(() => {
+    //     console.log("CONNECTION OPEN!!! Online database")
+    // })
+    // .catch(err => {
+    //     console.log("OH NO ERROR!!!!")
+    //     console.log(err)
+    // })
+
+//     const MongoClient = require('mongodb').MongoClient;
+//     const assert = require('assert');
+    
+//     // Connection URL
+//     const url = 'mongodb+srv://jiveshbhatti:Sajan1991@cluster0.0tpoi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+    
+// //     // Use connect method to connect to the Server
+// //     MongoClient.connect(url, function(err, client) {
+// //       assert.equal(null, err);
+// //    client.close(); 
+
+// //     });
+
+
+    // var cursor = db.collection('freeAgents').find({});
+    // console.log(cursor)
 
 
 const freeAgentSchema = new Schema({
