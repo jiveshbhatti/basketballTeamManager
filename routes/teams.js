@@ -11,5 +11,5 @@ router.get('/', teamsController.teams);
 router.get('/signup', teamsController.signup)
 router.post('/signup', authController.signup)
 router.get('/add/:id', teamsController.addPlayer)
-
+router.get('/show/:id', teamsController.showTeam)
 module.exports = router

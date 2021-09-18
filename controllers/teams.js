@@ -48,11 +48,18 @@ const signup = async(req,res,next)=>{
 
     res.render('teams/addTeam',{})
 }
+const showTeam = async(req,res,next)=>{
+  
+    const freeAgents = await freeAgentModel.FreeAgent.find({});
 
+
+    res.render('teams/viewTeam', {freeAgents})
+}
 
 module.exports = {
 
     addPlayer,
     teams,
-    signup
+    signup,
+    showTeam
 }

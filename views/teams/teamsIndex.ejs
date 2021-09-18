@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>Free Agent Pool</h1>
+
 
 <%- include('../partials/navbar')  %> 
 
@@ -24,16 +24,12 @@
     <div class="col">
 
     <div class="card" style="width: 18rem;">
-        <!-- <img src="<%= team.image  %> " class="card-img-top" alt="..."> -->
+      <img src="https://source.unsplash.com/collection/6861443/800x800">  
         <div class="card-body">
           <h5 class="card-title"><%= element.name  %> </h5>
           <p class="card-text"><%= team.description %> </p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">    <%= team.age %></li>
-          <li class="list-group-item">  <%= team.height%></li>
-          <li class="list-group-item">      <%= team.position %></li>
-        </ul>
+  
         <div class="card-body">
           
           
@@ -61,20 +57,20 @@
     <div class="col">
 
     <div class="card" style="width: 18rem;">
-        
+      <img src="https://source.unsplash.com/collection/1726716/800x800">  
         <div class="card-body">
           <h5 class="card-title"><%= element.name  %> </h5>
        
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">    <%= team.players %></li>
+         
         </ul>
         <div class="card-body">
           
           
      
-          <a href="freeAgentPool/show/<%= team.id  %>"><button type="button" class="btn btn-info">Show</button></a>
-          <button type="button" class="btn btn-success">Add</button>
+          <a href="teams/show/<%= element.id  %>"><button type="button" class="btn btn-info">Show</button></a>
+        
           <a href="freeAgentPool/delete/<%= team.id  %>"> <button type="button" class="btn btn-danger">Delete</button></a>
         </div>
       </div>

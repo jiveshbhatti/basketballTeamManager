@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Team</title>
+</head>
+<body>
+    <%- include('../partials/navbar')  %> 
+
+   <h1>All Players:</h1>
+
+   <% freeAgents.forEach(element => { %>
+    
+
+
+   <div class="col">
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= element.image  %> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= element.name  %> </h5>
+          <p class="card-text"><%= element.description %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">    <%= element.age %></li>
+          <li class="list-group-item">  <%= element.height%></li>
+          <li class="list-group-item">      <%= element.position %></li>
+        </ul>
+        <div class="card-body">
+          
+          
+     
+          <a href="freeAgentPool/show/<%= element.id  %>"><button type="button" class="btn btn-info">Show</button></a>
+          <a href="teams/add/<%= element.id  %>"><button type="button" class="btn btn-success">Add</button></a>
+          <a href="freeAgentPool/delete/<%= element.id  %>"> <button type="button" class="btn btn-danger">Delete</button></a>
+        </div>
+      </div>
+
+      <br>
+
+
+    </div>
+    
+ 
+  <% }) %>
+
+</div>
+</body>
+</html>
