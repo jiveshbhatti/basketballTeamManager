@@ -2,6 +2,8 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
 var logger = require('morgan');
 const freeAgentModel = require('./models/freeAgent')
 const mongoose = require('mongoose')
@@ -25,6 +27,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//session's authentication
+app.use(session({
+  secret: 'SEIRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/freeAgentPool', agentPoolIndex)

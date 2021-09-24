@@ -3,31 +3,32 @@ const axios = require("axios");
 const freeAgentModel = require("../models/freeAgent");
 const mongoose = require("mongoose");
 
-const listOfPlayers = async (req, res) => {
-  const freeAgents = await freeAgentModel.FreeAgent.find({});
-  //const freeAgentsOnline = await db.collection('freeAgents').find({})
+// const listOfPlayers = async (req, res) => {
+//   const freeAgents = await freeAgentModel.FreeAgent.find({});
 
-  //const freeAgentsOnline = await
-  //console.log(freeAgents)
-  // res.render('products/index', {products})
-  //console.log(freeAgentsOnline)
-  return freeAgents;
-};
+//   return freeAgents;
+// };
 
-//   const playerById = async (req, res) => {
 
-//    console.log(req.params.id)
+async function  listOfPlayers (req,res){
+    const freeAgentsOnline = await freeAgentModel.FreeAgent.find({})
+    console.log(freeAgentsOnline)
+    return freeAgentsOnline;
+}
+  const playerById = async (req, res) => {
 
-//     const playerId = req.params.id
+   console.log(req.params.id)
 
-//     const freeAgent = await freeAgentModel.FreeAgent.findById(playerId)
-//     // //console.log(freeAgents)
-//     // // res.render('products/index', {products})
+    const playerId = req.params.id
 
-//      console.log(freeAgent)
-//    return freeAgents
+    const freeAgent = await freeAgentModel.FreeAgent.findById(playerId)
+    // //console.log(freeAgents)
+    // // res.render('products/index', {products})
 
-//   }
+     console.log(freeAgent)
+   return freeAgents
+
+  }
 
 const playerShow = async (req, res) => {
   const player = req.params.id;
