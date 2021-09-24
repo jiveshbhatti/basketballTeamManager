@@ -13,7 +13,7 @@ const Schema = mongoose.Schema;
 //     })
 
     /**Online Database */
-    mongoose.connect('mongodb+srv://jiveshbhatti:Sajan1991@cluster0.0tpoi.mongodb.net/freeAgent?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("CONNECTION OPEN!!! Online database")
     })

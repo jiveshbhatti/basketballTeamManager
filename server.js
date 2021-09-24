@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var logger = require('morgan');
+require('dotenv').config()
 const freeAgentModel = require('./models/freeAgent')
 const mongoose = require('mongoose')
 // const teamModel = require('./models/teams')
