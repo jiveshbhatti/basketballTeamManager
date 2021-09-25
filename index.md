@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## Basketball Team Manager
 
-You can use the [editor on GitHub](https://github.com/jiveshbhatti/basketballTeamManager/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A website to recruit local free agents and add them to your roster!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### ERD & Wireframes
 
-```markdown
-Syntax highlighted code block
+![main image](https://github.com/jiveshbhatti/basketballTeamManager/blob/main/WireFrame:ERD/FreeAgent%20Index.png?raw=true)
+![alt text](https://github.com/jiveshbhatti/basketballTeamManager/blob/main/WireFrame:ERD/Add%20a%20freeAgent%20form.png?raw=true)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## HomePage
+![alt text](https://i.imgur.com/kPZ4CE5.png)
+### Index
+![alt text](https://i.imgur.com/kPZ4CE5.png)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Technologies Used:
 
-[Link](url) and ![Image](src)
-```
+1. HTML
+2. CSS
+3. Bootstrap
+4. API (axios)
+5. Node
+6. Express
+7. Javascript
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jiveshbhatti/basketballTeamManager/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Future Improvements:
+Adding authorization to the site. 
