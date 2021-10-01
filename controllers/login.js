@@ -1,56 +1,42 @@
+const teamRoute = require("../routes/teams");
+const axios = require("axios");
+const teamModel = require("../models/freeAgent");
+const mongoose = require("mongoose");
+const userModel = require("../models/userModel");
+const freeAgentModel = require("../models/freeAgent");
+const loginController = require("../routes/login");
 
-const teamRoute = require('../routes/teams')
-const axios = require('axios')
-const teamModel = require('../models/freeAgent')
-const mongoose = require('mongoose')
-const userModel = require('../models/userModel')
-const freeAgentModel = require('../models/freeAgent')
-const loginController = require('../routes/login')
+const logIn = async function (req, res, next) {
+  res.render("teams/loginTeam", {});
+};
 
+const logInPost = async (req, res, next) => {
+  let email = req.body.email;
+  let password = req.body.password;
 
-const logIn = async function(req, res, next) {
+  const findUser = await userModel.TeamSignUpInst.find({ email: email });
 
-   
-  res.render('teams/loginTeam', {  })
+  if (!findUser) {
+    alert("Does not exist");
+  }
 
-}
+  let currentEmail = findUser[0].email;
+  let currentPass = findUser[0].password;
 
-const logInPost =  async (req,res,next)=> {
+  console.log(email);
+  console.log(currentEmail);
+  console.log(password);
+  console.log(currentPass);
 
-    let email = req.body.email
-    let password = req.body.password
+  if ((email && password) === (currentEmail && currentPass)) {
+    console.log("login success");
 
-
-   
-const findUser =  await userModel.TeamSignUpInst.find({"email": email})
-
-
-
-if(!findUser){
-    alert('Does not exist')
-}
-
-let currentEmail = findUser[0].email
-let currentPass = findUser[0].password
-
-console.log(email)
-console.log(currentEmail)
-console.log(password)
-console.log(currentPass)
-
-
-if((email&&password) === (currentEmail && currentPass)){
-console.log('login success')
-
-res.redirect('/')
-}
-else{
-    console.log('wrong pass')
-}
-
-}
-module.exports= {
-
-    logIn,
-    logInPost
-}
+    res.redirect("/");
+  } else {
+    console.log("wrong pass");
+  }
+};
+module.exports = {
+  logIn,
+  logInPost,
+};

@@ -3,32 +3,18 @@ const axios = require("axios");
 const freeAgentModel = require("../models/freeAgent");
 const mongoose = require("mongoose");
 
-// const listOfPlayers = async (req, res) => {
-//   const freeAgents = await freeAgentModel.FreeAgent.find({});
+async function listOfPlayers(req, res) {
+  const freeAgentsOnline = await freeAgentModel.FreeAgent.find({});
 
-//   return freeAgents;
-// };
-
-
-async function  listOfPlayers (req,res){
-    const freeAgentsOnline = await freeAgentModel.FreeAgent.find({})
-    console.log(freeAgentsOnline)
-    return freeAgentsOnline;
+  return freeAgentsOnline;
 }
-  const playerById = async (req, res) => {
+const playerById = async (req, res) => {
+  const playerId = req.params.id;
 
-   console.log(req.params.id)
+  const freeAgent = await freeAgentModel.FreeAgent.findById(playerId);
 
-    const playerId = req.params.id
-
-    const freeAgent = await freeAgentModel.FreeAgent.findById(playerId)
-    // //console.log(freeAgents)
-    // // res.render('products/index', {products})
-
-     console.log(freeAgent)
-   return freeAgents
-
-  }
+  return freeAgents;
+};
 
 const playerShow = async (req, res) => {
   const player = req.params.id;
@@ -39,11 +25,9 @@ const playerShow = async (req, res) => {
 };
 
 const freeAgentHome = async function (req, res, next) {
-  console.log("entering freeagent route");
-
   const listOfAllAgents = await listOfPlayers();
 
-  await console.log(listOfAllAgents);
+ 
 
   res.render("freeAgents/freeAgentPoolIndex", { listOfAllAgents });
 };
@@ -60,7 +44,7 @@ const addAgent = (req, res, next) => {
 //post request
 
 const addAgentPost = async (req, res, next) => {
-  console.log(req.body);
+  
 
   const newPlayer = new freeAgentModel.FreeAgent({
     name: req.body.name,
@@ -74,13 +58,10 @@ const addAgentPost = async (req, res, next) => {
 
   await newPlayer.save();
 
-  console.log(newPlayer);
   res.redirect("/freeAgentPool");
 };
 
 const deleteAgent = async (req, res, next) => {
-  console.log(req.params.id);
-
   const player = req.params.id;
 
   const freeAgent = await freeAgentModel.FreeAgent.findByIdAndDelete(player);
@@ -89,8 +70,6 @@ const deleteAgent = async (req, res, next) => {
 };
 
 const editAgent = async (req, res, next) => {
-  console.log(req.params.id);
-
   const player = req.params.id;
 
   const freeAgent = await freeAgentModel.FreeAgent.findByIdAndUpdate(player, {
@@ -104,8 +83,6 @@ const editAgent = async (req, res, next) => {
   });
   await freeAgent.save();
 
-  console.log(freeAgent);
-
   res.redirect(`/freeAgentPool/show/${player}`);
 };
 
@@ -113,8 +90,6 @@ const editPage = async (req, res, next) => {
   const player = req.params.id;
 
   const freeAgent = await freeAgentModel.FreeAgent.findById(player);
-
-  console.log(freeAgent);
 
   res.render("freeAgents/editAgent", { freeAgent });
 };
