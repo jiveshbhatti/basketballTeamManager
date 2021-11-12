@@ -15,5 +15,30 @@
   
 <img src="https://source.unsplash.com/collection/8854993/1020x800">
   
+  
+  
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQP7fZEBe1U_n_0dzaUaCrXV1ijnpz5Sw",
+    authDomain: "basketball-327018.firebaseapp.com",
+    projectId: "basketball-327018",
+    storageBucket: "basketball-327018.appspot.com",
+    messagingSenderId: "443172504407",
+    appId: "1:443172504407:web:a15cb1c58bbd70031ab412",
+    measurementId: "G-M7MRXN0EBJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   </body>
 </html>
